@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400);
+
+$font-family-sans-serif: 'Source Sans Pro', Helvetica, Arial;
+$body-bg: #ecf0f1;
+$navbar-bg: #27ae60;
+$navbar-link-color: white;
+$navbar-default-bg: white;
+$navbar-default-brand-color: #3498db;
+$brand-primary: #3498db;
+$jumbotron-bg: #bdc3c7;
+
+@import 'bootstrap';
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+     text-align: center;
+}
