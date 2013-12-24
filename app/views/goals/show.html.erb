@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="jumbotron center">
 <p>
   <strong>Description:</strong>
   <%= @goal.description %>
@@ -13,7 +13,13 @@
 <p>
   <strong>Complete:</strong>
   <%= @goal.complete %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%= @goal.type %>
 </p>  
 
 <%= link_to 'Edit', edit_goal_path(@goal) %> |
 <%= link_to 'Back', goals_path %>
+
+</div>

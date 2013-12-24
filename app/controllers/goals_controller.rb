@@ -19,7 +19,7 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
-    
+
   end
 
   # POST /goals
@@ -70,6 +70,6 @@ class GoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
-      params.require(:goal).permit(:description)
+      params.require(:goal).permit(:description, :complete, :current, :type)
     end
 end

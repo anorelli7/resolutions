@@ -1,33 +1,19 @@
-<h1>Listing goals</h1>
+<%= render 'pages/home' unless user_signed_in? %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Current</th>
-      <th>Complete</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      
-    </tr>
-  </thead>
+<div class="jumbotron center">
 
-  <tbody>
     <% @goals.each do |goal| %>
-      <tr>
-        <td><%= goal.description %></td>
-        <td><%= goal.current %></td>
-        <td><%= goal.complete %></td>
-        <td><%= link_to 'Show', goal %></td>
-        <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
-        <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-      </tr>
+    <div class="panel">
+        <p><%= goal.description %><br>
+        <%= link_to 'Show', goal %> |
+        <%= link_to 'Edit', edit_goal_path(goal) %> |
+        <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
 <%= link_to 'New Goal', new_goal_path %>
+
+</div>
