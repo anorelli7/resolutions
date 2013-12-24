@@ -1,19 +1,20 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div class="jumbotron center">
-
     <% @goals.each do |goal| %>
-    <div class="panel">
-        <p><%= goal.description %><br>
-        <%= link_to 'Show', goal %> |
-        <%= link_to 'Edit', edit_goal_path(goal) %> |
-        <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
+    <div class="well">
+	    <div class="row">
+	    	<div class="col-md-10">
+	        	<p class="goal_list"><%= goal.description %> <strong><%= goal.complete %></strong> <%= goal.goal_type %></p>
+	        </div>
+	        <div class="col-md-2"><p><%= link_to 'Show', goal %> |
+	        <%= link_to 'Edit', edit_goal_path(goal) %> |
+	        <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	        </div>
+	    </div>
+	</div>
     <% end %>
 
 
 <br>
 
 <%= link_to 'New Goal', new_goal_path %>
-
-</div>
