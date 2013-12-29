@@ -1,32 +1,60 @@
-<%= form_for(@goal) do |f| %>
-  <% if @goal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+<div class="container"> 
+  <div class="goal_submit">
 
-      <ul>
-      <% @goal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <%= form_for(@goal) do |f| %>
+          <% if @goal.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+              <ul>
+              <% @goal.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+    <div class="col-md-2">  
+      <h2 class="title"> I want to </h2>
     </div>
-  <% end %>
+      <div class="col-md-10-offset-1">
+        <form class="form-inline" role="form">
+            <div class="form-group row">
+              
+                <div class="col-xs-3 field">
+                  <%= f.label :description, class: "sr-only" %>
+                  <%= f.text_field :description, class: "form-control", placeholder: "Run, Bike, Read, etc.",:autofocus=>true %>
+                </div>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :complete %><br>
-    <%= f.text_field :complete, class: "form-control" %>
-  </div>
-   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :goal_type, class: "form-control" %>
-  </div>
+                <div class="col-xs-4 field">
+                  <%= f.label :complete, class: "sr-only" %>
+                  <%= f.text_field :complete, class: "form-control", placeholder: "How far? How long? How many?" %>
+                </div>
 
 
-  <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+                  <div class="col-xs-2 field">
+                  <%= f.label :goal_type, class: "sr-only" %>
+                  <%= f.text_field :goal_type, class: "form-control", placeholder: "Miles, Books, etc." %>
+                  </div>
+
+
+            </div><!-- form-group row -->
+
+            <div class="row center">
+              <div class="form-group">
+                
+                  <div class="actions">
+                    <%= f.submit class: "btn btn-primary" %>
+                  </div>
+                
+              </div><!-- form-group -->
+            </div><!-- row -->
+        </form>
+
+      </div><!-- col-md-10 -->
+
+    <%= link_to 'Back', goals_path %>
+  </div><!-- goal_submit -->
+</div><!-- container -->
+
 <% end %>

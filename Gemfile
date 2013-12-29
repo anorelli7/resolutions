@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.1'
+gem 'bootstrap-select-rails', "~> 1.3.0.1"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

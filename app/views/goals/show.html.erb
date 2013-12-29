@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
-<div class="jumbotron center">
+<div class="jumbotron">
+
+<p>
+	<strong>
+		<%= @goal.user.username if @goal.user %>
+	</strong>
+</p>
+
+
 <p>
   <strong>Description:</strong>
   <%= @goal.description %>

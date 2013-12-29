@@ -4,17 +4,30 @@
     <div class="well">
 	    <div class="row">
 	    	<div class="col-md-10">
-	        	<p class="goal_list"><%= goal.description %> <strong><%= goal.complete %></strong> <%= goal.goal_type %></p>
+	        	
+	    	<p> I want to</p>
+	        	<p class="goal_list"><%= goal.description %> <strong><%= goal.complete %></strong> <%= goal.goal_type %> 
+	        	</p>
+	        	<p> <%= goal.user.username if goal.user %> </p>
 	        </div>
-	        <div class="col-md-2"><p><%= link_to 'Show', goal %> |
-	        <%= link_to 'Edit', edit_goal_path(goal) %> |
-	        <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	        <div class="col-md-2">
+	        
+	        <% if goal.user == current_user %> 
+	        	<p>
+	        	<%= link_to 'Show', goal %> |
+	        	<%= link_to 'Edit', edit_goal_path(goal) %> |
+	        	<%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	        <% end %>
 	        </div>
 	    </div>
 	</div>
     <% end %>
-
+    <% if user_signed_in? %>
+    	<div class="well center" style="background: #34495e">
+    		<%= link_to 'New Goal', new_goal_path %>
+    	</div>
+    <% end %>
 
 <br>
 
-<%= link_to 'New Goal', new_goal_path %>
+
