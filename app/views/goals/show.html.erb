@@ -1,33 +1,51 @@
 <p id="notice"><%= notice %></p>
-<div class="jumbotron">
+<div class="panel panel-default">
+<div class="panel-heading">
+</div> <!-- panel-header -->
 
-<p>
-	<strong>
-		<%= @goal.user.username if @goal.user %>
-	</strong>
-</p>
+        <div class="panel-body">
+        <p>
+        	<strong>User Name: </strong>
+        		<%= @goal.user.username if @goal.user %>
+        	
+        </p>
 
 
-<p>
-  <strong>Description:</strong>
-  <%= @goal.description %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          I'm going to
+                  <%= @goal.description %> 
+                  <strong><%= @goal.complete %></strong> 
+                  <%= @goal.goal_type %> 
+        </p>
 
-<p>
-  <strong>Current:</strong>
-  <%= @goal.current %>
-</p>
+        <p>
+          <strong>Current:</strong>
+          <%= @goal.current %> <%= @goal.goal_type %>
+        </p>
 
-<p>
-  <strong>Complete:</strong>
-  <%= @goal.complete %>
-</p>
-<p>
-  <strong>Goal Type:</strong>
-  <%= @goal.goal_type %>
-</p>  
+        <p>
+          <strong>Goal:</strong>
+          <%= @goal.complete %> <%= @goal.goal_type %>
+        </p>
 
-<%= link_to 'Edit', edit_goal_path(@goal) %> |
-<%= link_to 'Back', goals_path %>
 
-</div>
+      <p> <strong> My Progress </strong> </p>
+       <div class="progress progress-striped">
+
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=<%= @goal.current.to_i %> aria-valuemin="0" aria-valuemax=<%= @goal.complete.to_i %> style="width: <%= (@goal.current.to_f/@goal.complete)*100 %>%">
+          <span class="center"><%= ((@goal.current.to_f/@goal.complete)*100).to_i %>% Complete</span>
+        </div>
+      </div>
+
+          
+
+        </div><!-- panel-body -->
+
+    <div class="panel-footer">
+
+    <%= link_to 'Edit', edit_goal_path(@goal) %> |
+    <%= link_to 'Back', goals_path %>
+
+    </div><!-- panel-footer -->
+</div><!-- panel -->

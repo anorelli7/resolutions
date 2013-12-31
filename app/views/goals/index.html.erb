@@ -11,21 +11,31 @@
 		    	<div class="col-md-10">
 
 		        		<p class="goal_list">
-		        			I want to
+		        			I'm going to
 		        			<%= goal.description %> 
 		        			<strong><%= goal.complete %></strong> 
 		        			<%= goal.goal_type %> 
-		        			by
-		        			<%= goal.end_date.to_date.to_formatted_s(:long) %>
 		        		</p>
+
+		        		<% if goal.current != nil %>
+		        		<div class="progress progress-striped">
+
+					         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=<%= goal.current.to_i %> aria-valuemin="0" aria-valuemax=<%= goal.complete.to_i %> style="width: <%= (goal.current.to_f/goal.complete)*100 %>%">
+					          <span class="center"><%= ((goal.current.to_f/goal.complete)*100).to_i %>% Complete</span>
+					          </div>
+					    </div>
+
+					<% end %>
 
 		       	</div>
 
-		       	<div class="col-md-2">
+		        <div class="col-md-2">
 
 		 			<p class="label label-primary"> <%= distance_of_time_in_words(Time.now, goal.end_date, include_days = true) %>  left </p>
 		        	
 		        </div>
+
+		        	
 		    </div>
 
 		        <div class="panel-footer">
@@ -41,9 +51,11 @@
     <% end %>
     <% if user_signed_in? %>
 
-    		<button type="button" class="btn btn-default btn-lg btn-block">
-    			<%= link_to "New Goal", new_goal_path %>
-    		</button>
+    		
+    			<%= link_to new_goal_path do %>
+    				<button type="button" class="btn btn-primary btn-lg btn-block"> Create a Goal
+    				</button>
+				<% end %>
 
     <% end %>
 

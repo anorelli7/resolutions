@@ -1,5 +1,5 @@
 <div class="container"> 
-  <div class="goal_submit">
+
 
         <%= form_for(@goal) do |f| %>
           <% if @goal.errors.any? %>
@@ -13,48 +13,41 @@
               </ul>
             </div>
         <% end %>
-
-    <div class="col-md-2">  
-      <h2 class="title"> I want to </h2>
-    </div>
-      <div class="col-md-10-offset-1">
-        <form class="form-inline" role="form">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-md-2">  
+        <h3 class="title"> I'm going to </h3>
+      </div>
+      <div class="col-md-10">
             <div class="form-group row">
               
-                <div class="col-xs-3 field">
+                <div class="col-md-3 field">
                   <%= f.label :description, class: "sr-only" %>
                   <%= f.text_field :description, class: "form-control", placeholder: "Run, Bike, Read, etc.",:autofocus=>true %>
                 </div>
 
-                <div class="col-xs-4 field">
+                <div class="col-md-4 field">
                   <%= f.label :complete, class: "sr-only" %>
                   <%= f.text_field :complete, class: "form-control", placeholder: "How far? How long? How many?" %>
                 </div>
 
 
-                  <div class="col-xs-2 field">
-                  <%= f.label :goal_type, class: "sr-only" %>
-                  <%= f.text_field :goal_type, class: "form-control", placeholder: "Miles, Books, etc." %>
+                  <div class="col-md-2 field">
+                    <%= f.label :goal_type, class: "sr-only" %>
+                    <%= f.text_field :goal_type, class: "form-control", placeholder: "Miles, Books, etc." %>
                   </div>
+            </div><!-- form-group row -->     
+            
+            <div class="form-group row actions">
+              <%= f.submit class: "btn btn-primary" %>
 
+              <button type="button" class="btn btn-default"><%= link_to 'Back', goals_path %></button>
+            </div>
 
-            </div><!-- form-group row -->
-
-            <div class="row center">
-              <div class="form-group">
-                
-                  <div class="actions">
-                    <%= f.submit class: "btn btn-primary" %>
-                  </div>
-                
-              </div><!-- form-group -->
-            </div><!-- row -->
-        </form>
 
       </div><!-- col-md-10 -->
-
-    <%= link_to 'Back', goals_path %>
-  </div><!-- goal_submit -->
+    </div>
+ </div>     
 </div><!-- container -->
 
 <% end %>

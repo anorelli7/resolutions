@@ -1,0 +1,49 @@
+<div class="container"> 
+<h1>Update Progress</h1>
+  <div class="panel panel-default">
+
+    <div class="panel-heading">  
+      <h4> <strong>My Goal:</strong>
+                  I'm going to
+                  <%= @goal.description %> 
+                  <strong><%= @goal.complete %></strong> 
+                  <%= @goal.goal_type %> 
+
+       </h4>
+    </div>
+      <div class="panel-body">
+
+        <%= form_for(@goal) do |f| %>
+          <% if @goal.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+              <ul>
+              <% @goal.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+            <div class="form-group row">
+              
+                <div class="col-md-3 field">
+                  <%= f.label :current, class: "sr-only" %>
+                  <%= f.text_field :current, class: "form-control", :autofocus=>true, placeholder: @goal.current  %>
+                </div>
+
+
+            </div><!-- form-group row -->
+
+        <div class="actions center">
+          <%= f.submit class: "btn btn-primary" %>
+
+          <button type="button" class="btn btn-default"><%= link_to 'Back', goals_path %></button>
+        </div>
+      </div><!-- col-md-10 -->
+      
+  </div><!-- goal_submit -->
+</div><!-- container -->
+
+<% end %>
