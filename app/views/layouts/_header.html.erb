@@ -30,24 +30,24 @@
           <span class="glyphicon glyphicon-info-sign"></span> About
         <% end %>
       </li>
-      <li>
-        <%= link_to edit_user_registration_path do %>
-          <span class="glyphicon glyphicon-user"></span> Account Settings
-        <% end %> 
-      </li>
+       
+      <% if user_signed_in? %>   
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+              <%= current_user.username.to_s %> <% end %>
+          </li> 
         
-        <% if user_signed_in? %>
           <li><%= link_to destroy_user_session_path, method: :delete do %>
-              <span class="glyphicon glyphicon-off"></span> Log Out
-            <% end %>
+              <span class="glyphicon glyphicon-off"></span> Log Out <% end %>
           </li>
-        
-          <% else %>
+    
+      <% else %>
             <li>
                 <button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path %>
                 </button>
             </li>
-        <% end %>
+      <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
 

@@ -20,6 +20,14 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
+
+  end
+
+  def update_current
+    @goal_current = Goal.find(params[:current])
+    @goal_current.update_current
+
+    redirect_to @goal, notice: 'Goal was updated successfully.'
   end
 
   # POST /goals

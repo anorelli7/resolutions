@@ -5,4 +5,7 @@ class Goal < ActiveRecord::Base
 	validates :complete, presence: true
   	validates :description, presence: true
 
+  	def update_current
+  		self.increase! :current
+  	end
 end
