@@ -5,5 +5,4 @@ class Goal < ActiveRecord::Base
 	validates :complete, presence: true
   	validates :description, presence: true
 
-  	
 end

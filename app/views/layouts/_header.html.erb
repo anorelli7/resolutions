@@ -17,8 +17,16 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <li>
+        <%= link_to root_path do %>
+          <span class="glyphicon glyphicon-home"></span> Home
+        <% end %> 
+      </li>
+      <li>
+        <%= link_to about_path do %>
+          <span class="glyphicon glyphicon-info-sign"></span> About
+        <% end %>
+      </li>
       <li>
         <%= link_to edit_user_registration_path do %>
           <span class="glyphicon glyphicon-user"></span> Account Settings
@@ -26,10 +34,13 @@
       </li>
         
         <% if user_signed_in? %>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-off"></span> Log Out
+            <% end %>
+          </li>
         
           <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", new_user_session_path %></button></li>
         <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
