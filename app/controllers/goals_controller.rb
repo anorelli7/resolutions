@@ -3,7 +3,7 @@ class GoalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @goals = Goal.order(:user_id)
+    @goals = Goal.order(updated_at: :asc)
   end
 
   def show
