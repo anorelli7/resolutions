@@ -1,5 +1,6 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
+    <div id="goals_index">
     <% @goals.each do |goal| %>
 	    <div class="panel panel-default">
 		    <div class="panel-heading">
@@ -20,7 +21,7 @@
 		        		<% if goal.current != nil %>
 		        		<div class="progress progress-striped">
 
-					         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=<%= goal.current.to_i %> aria-valuemin="0" aria-valuemax=<%= goal.complete.to_i %> style="width: <%= (goal.current.to_f/goal.complete)*100 %>%">
+					         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=<%= goal.current.to_f %> aria-valuemin="0" aria-valuemax=<%= goal.complete.to_i %> style="width: <%= (goal.current.to_f/goal.complete)*100 %>%">
 					          <span class="center"><%= ((goal.current.to_f/goal.complete)*100).to_i %>% Complete</span>
 					          </div>
 					    </div>
@@ -49,16 +50,15 @@
 		</div>
 
     <% end %>
-    <% if user_signed_in? %>
+	    <% if user_signed_in? %>
 
-    		
-    			<%= link_to new_goal_path do %>
-    				<button type="button" class="btn btn-primary btn-lg btn-block"> Create a Goal
-    				</button>
-				<% end %>
-
-    <% end %>
-
-<br>
+	    		<div class="panel">
+	    			<%= link_to new_goal_path do %>
+	    				<button type="button" class="btn btn-primary btn-lg btn-block"> Create a Goal
+	    				</button>
+					<% end %>
+				</div>
+	    <% end %>
+    </div>
 
 

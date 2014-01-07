@@ -2,36 +2,23 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /goals
-  # GET /goals.json
   def index
     @goals = Goal.order(:user_id)
   end
 
-  # GET /goals/1
-  # GET /goals/1.json
   def show
   end
 
-  # GET /goals/new
   def new
     @goal = current_user.goals.build
   end
 
-  # GET /goals/1/edit
   def edit
-
+    @goal = Goal.find(params[:id])
+    
   end
 
-  def update_current
-    @goal_current = Goal.find(params[:current])
-    @goal_current.update_current
-
-    redirect_to @goal, notice: 'Goal was updated successfully.'
-  end
-
-  # POST /goals
-  # POST /goals.json
+  
   def create
     @goal = current_user.goals.build(goal_params)
     if @goal.save
@@ -41,9 +28,10 @@ class GoalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /goals/1
-  # PATCH/PUT /goals/1.json
   def update
+    
+    @goal = Goal.find(params[:id])
+    
     if @goal.update(goal_params)
       redirect_to @goal, notice: 'Goal was successfully updated.'
     else
@@ -51,14 +39,10 @@ class GoalsController < ApplicationController
     end
   end
 
-  # DELETE /goals/1
-  # DELETE /goals/1.json
   def destroy
     @goal.destroy
-    respond_to do |format|
-      format.html { redirect_to goals_url }
-      format.json { head :no_content }
-    end
+    redirect_to goals_url
+   
   end
 
   private

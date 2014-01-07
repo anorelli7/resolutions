@@ -7,12 +7,16 @@ $navbar-link-color: white;
 $navbar-default-bg: white;
 $navbar-default-brand-color: #3498db;
 $brand-primary: #3498db;
-$jumbotron-bg: #bdc3c7;
+$jumbotron-bg: white;
 
 @import 'bootstrap';
 
 .center {
      text-align: center;
+}
+
+h2.jumbotron {
+	font-size: 55px;
 }
 
 .navbar-brand {
@@ -23,7 +27,9 @@ $jumbotron-bg: #bdc3c7;
 .well {
 	background: white;
 }
-
+#goals_index {
+	margin: 0 auto;
+}
 .goal_list {
 	font-size: 36px;
 }

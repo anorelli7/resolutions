@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231014225) do
+ActiveRecord::Schema.define(version: 20140107032852) do
 
   create_table "goal_types", force: true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131231014225) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "complete"
-    t.integer  "current",     default: 0
+    t.float    "current",     default: 0.0
     t.string   "goal_type"
     t.datetime "end_date",    default: '2014-12-31 23:59:59'
   end
