@@ -1,7 +1,7 @@
 TestApp::Application.routes.draw do
   resources :goals
-
   devise_for :users
+  
   root "goals#index"
   get "about" => "pages#about"
   # The priority is based upon order of creation: first created -> highest priority.

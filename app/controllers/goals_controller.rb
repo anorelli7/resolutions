@@ -29,9 +29,9 @@ class GoalsController < ApplicationController
   end
 
   def update
-    
-    @goal = Goal.find(params[:id])
-    
+   
+      @goal = Goal.find(params[:id])
+
     if @goal.update(goal_params)
       redirect_to @goal, notice: 'Goal was successfully updated.'
     else
@@ -58,6 +58,6 @@ class GoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
-      params.require(:goal).permit(:description, :complete, :current, :goal_type)
+      params.require(:goal).permit(:description, :complete, :current, :goal_type, :update_progress)
     end
 end
