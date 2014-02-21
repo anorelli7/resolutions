@@ -7,4 +7,14 @@ class User < ActiveRecord::Base
          has_many :goals
 
          validates :username, presence: true
+
+
+         def initializeName
+         	names = self.username.split
+
+         	firstname = names.first[0,1]
+         	lastname = names.last[0,1]
+
+         	p "#{lastname}, #{firstname}"
+         end
 end

@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.1'
 gem 'bootstrap-select-rails', "~> 1.3.0.1"
 gem 'masonry-rails', '~> 0.2.0'
+gem 'acts_as_commentable'
 
 
 group :doc do

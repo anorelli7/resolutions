@@ -4,3 +4,6 @@
 
 
 $('select').selectpicker();
+
+setTimeout( "jQuery('.alert').fadeOut();",750 );
+setTimeout( "jQuery('#notice').hide();", 10 );
