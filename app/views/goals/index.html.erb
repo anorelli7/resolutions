@@ -3,12 +3,13 @@
     <div id="goals_index">
     	<% if user_signed_in? %>
 
-	    		<div class="panel">
+	    		
 	    			<%= link_to new_goal_path do %>
-	    				<button type="button" class="btn btn-primary btn-lg btn-block"> Create a Goal
+	    				<button type="button" class="btn btn-primary btn-lg btn-block">Create a Goal
 	    				</button>
+	    				<br>
 					<% end %>
-				</div>
+				
 	    <% end %>
 
     <% @goals.each do |goal| %>
