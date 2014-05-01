@@ -2,13 +2,13 @@
 
 $font-family-sans-serif: 'Helvetica Neue Light', 'Source Sans Pro', Arial;
 $font-weight: 100;
-$body-bg: #ecf0f1;
-$navbar-bg: #27ae60;
-$navbar-link-color: white;
-$navbar-default-bg: white;
+$body-bg: white;
+$navbar-bg: #CCC;
+$navbar-link-color: #CCC;
+$navbar-default-bg: #CCC;
 $navbar-default-brand-color: #16a085;
 $brand-primary: #1abc9c;
-$jumbotron-bg: white;
+$jumbotron-bg: #CCC;
 
 @import 'bootstrap';
 
@@ -40,8 +40,6 @@ $jumbotron-bg: white;
 		
 	}
 
-	
-
 	.goal_list {
 	font-size: 24px;
 }
@@ -55,11 +53,29 @@ $jumbotron-bg: white;
 
 	}
 
+	h2.jumbotron {
+	text-align: center;
+}
+
 
 }
 
 
 
+.navbar {
+	height:60px; left:0; position:fixed; width:100%; top:0;
+	z-index: 9999;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	background: #ccc;
+}
+
+.body_container {	
+	padding: 80px 10px;
+	overflow: auto;
+	margin: 0 auto;
+}
 
 
 .center {
@@ -73,10 +89,12 @@ h2.jumbotron {
 .navbar-brand {
      font-weight: bold;
      text-align: center;
+     background: #ccc;
 }
 
 .well {
 	background: white;
+	opacity: .5;
 }
 #goals_index {
 	margin: 0 auto;
