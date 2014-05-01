@@ -3,9 +3,9 @@
 $font-family-sans-serif: 'Helvetica Neue Light', 'Source Sans Pro', Arial;
 $font-weight: 100;
 $body-bg: white;
-$navbar-bg: #CCC;
-$navbar-link-color: #CCC;
-$navbar-default-bg: #CCC;
+$navbar-bg: white;
+$navbar-link-color: white;
+$navbar-default-bg: #ecf0f1;
 $navbar-default-brand-color: #16a085;
 $brand-primary: #1abc9c;
 $jumbotron-bg: #CCC;
@@ -16,9 +16,8 @@ $jumbotron-bg: #CCC;
 @media (min-width: $screen-sm-min) {
 	.icon {
 	background: #1abc9c;
-	width: 70px;
-	height: 70px;
-	border-radius: 0px 0px 25px 0px;
+	width: 100%; 
+	border-radius: 20px 20px 0 0 ;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 10px;
@@ -48,28 +47,35 @@ $jumbotron-bg: #CCC;
 		background: #1abc9c;
 		color: #ecf0f1;
 		padding: 10px;
-		width: 150px; 
-		border-radius: 0 0 20px 0;
+		width: 100%; 
+		border-radius: 20px 20px 0 0 ;
+	}
 
+	.nav.navbar-nav.navbar-right {
+		background: #ecf0f1;
 	}
 
 	h2.jumbotron {
 	text-align: center;
 }
 
+	.btn-info {		
+		border-radius: 20px;
+		height: 80px;
+		width: 80px;
+	}
 
 }
 
-
+.panel {
+		border-radius: 20px;
+}
 
 .navbar {
 	height:60px; left:0; position:fixed; width:100%; top:0;
 	z-index: 9999;
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	background: #ccc;
-}
 
 .body_container {	
 	padding: 80px 10px;
@@ -89,7 +95,7 @@ h2.jumbotron {
 .navbar-brand {
      font-weight: bold;
      text-align: center;
-     background: #ccc;
+
 }
 
 .well {
