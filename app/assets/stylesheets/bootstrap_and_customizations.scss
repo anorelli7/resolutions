@@ -7,7 +7,7 @@ $navbar-bg: white;
 $navbar-link-color: white;
 $navbar-default-bg: #ecf0f1;
 $navbar-default-brand-color: #16a085;
-$brand-primary: #1abc9c;
+$brand-primary: rgba(241, 196, 15,1.0);
 $jumbotron-bg: #CCC;
 
 @import 'bootstrap';
@@ -17,7 +17,7 @@ $jumbotron-bg: #CCC;
 	.icon {
 	background: #1abc9c;
 	width: 100%; 
-	border-radius: 20px 20px 0 0 ;
+	border-radius: 14px 14px 0 0 ;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 10px;
@@ -43,12 +43,12 @@ $jumbotron-bg: #CCC;
 	font-size: 24px;
 }
 
-	.panel-header {
+	.panel-header, .panel-heading {
 		background: #1abc9c;
 		color: #ecf0f1;
 		padding: 10px;
 		width: 100%; 
-		border-radius: 20px 20px 0 0 ;
+		border-radius: 14px 14px 0 0 ;
 	}
 
 	.nav.navbar-nav.navbar-right {
@@ -69,11 +69,13 @@ $jumbotron-bg: #CCC;
 
 .panel {
 		border-radius: 20px;
+		border: 5px solid rgba(26, 188, 156,1.0);
 }
 
 .navbar {
 	height:60px; left:0; position:fixed; width:100%; top:0;
 	z-index: 9999;
+	background-color: rgba(200, 200, 200, 0.9);
 }
 
 
