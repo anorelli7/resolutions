@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require bootstrap-select
+ *= require 'masonry/transitions'
  *= require_tree .
  */

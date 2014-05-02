@@ -2,10 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#goals_index {
+#goals_index .masonry {
 	margin: 0 auto;
 }
-
 
 
 .update_button {
@@ -13,6 +12,16 @@
 	width: 75px;
 	border-radius: 37.5px;
 	margin: 10px auto;
+	background: rgba(241, 196, 15, .7);
+	border: 5px solid rgba(241, 196, 15,1.0);
+	color: rgba(26, 188, 156,1.0);
+}
+
+.create_button {
+	width: 100%;
+	margin: 0 auto;
+	font-size: 11px;
+	border-radius: 37.5px;
 	background: rgba(241, 196, 15, .7);
 	border: 5px solid rgba(241, 196, 15,1.0);
 	color: rgba(26, 188, 156,1.0);

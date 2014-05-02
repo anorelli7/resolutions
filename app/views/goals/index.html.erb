@@ -1,38 +1,32 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
+	
+		<% if user_signed_in? %>
+	    	
+	            <%= link_to new_goal_path do %>
+	              <button type="button" class="btn create_button">Create a Goal
+	              </button>
+	              <br>
+	            <% end %>
+	        
+	     <% end %>  
+
     <div id="goals_index">
-    	<% if user_signed_in? %>
-
-	    		
-	    			<%= link_to new_goal_path do %>
-	    				<button type="button" class="btn btn-primary btn-lg btn-block">Create a Goal
-	    				</button>
-	    				<br>
-					<% end %>
-				
-	    <% end %>
-
-    <% @goals.each do |goal| %>
     	
-	    <div class="panel panel-default">
-		     <div class="col-md-2 col-sm-2 col-xs-12 icon">
-		     
-		    		<p> <%= goal.user.username if goal.user %> </p>
+    	
+         <% @goals.each do |goal| %>
+    	
+	    <div class="box box-default">
 
-		     </div>
-
-		    <div class="panel-header">
+		    <div class="box-header">
 
 		    		<p> <%= goal.user.username if goal.user %> </p>
 
 	    	</div>
-		    <div class="panel-body">
-		    	
-		    		
+		    <div class="box-body">
 		    	
 
-
-	    		<div class="col-md-9 col-sm-8 col-xs-8">
+	    		<div class="box_goal">
 		        		<p class="goal_list">
 		        			<%= goal.description %> 
 		        			<strong><%= goal.complete %></strong> 
@@ -55,7 +49,7 @@
 		    
 		    	<% if goal.user == current_user %>
 
-						 <div class="col-md-3 col-sm-2 col-xs-2">
+						 <div class="box_update">
 							  <%= link_to edit_goal_path(goal) do %>
 								  <button type="button" class="btn update_button"> 
 								  Update </button>

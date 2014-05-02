@@ -13,10 +13,8 @@ $jumbotron-bg: #CCC;
 @import 'bootstrap';
 
 
-@media (min-width: $screen-sm-min) {
-	.icon {
+.box-header {
 	background: #1abc9c;
-	width: 100%; 
 	border-radius: 14px 14px 0 0 ;
 	margin: 0 auto;
 	text-align: center;
@@ -24,56 +22,65 @@ $jumbotron-bg: #CCC;
 	color: #ecf0f1;
 }
 
-.goal_list {
-	font-size: 36px;
+
+.nav.navbar-nav.navbar-right {
+	
 }
 
-	.panel-header {
-		display: none;
-	}
-}
-
-@media (max-width: $screen-sm-min) {
-	.icon {
-		display: none;
-		
-	}
-
-	.goal_list {
-	font-size: 24px;
-}
-
-	.panel-header, .panel-heading {
-		background: #1abc9c;
-		color: #ecf0f1;
-		padding: 10px;
-		width: 100%; 
-		border-radius: 14px 14px 0 0 ;
-	}
-
-	.nav.navbar-nav.navbar-right {
-		background: #ecf0f1;
-	}
-
-	h2.jumbotron {
+h2.jumbotron {
 	text-align: center;
 }
 
-	.btn-info {		
-		border-radius: 20px;
-		height: 80px;
-		width: 80px;
-	}
+.btn-info {		
+	border-radius: 20px;
+	height: 80px;
+	width: 80px;
+}
+
+.goal_list {
+	font-size: 24px;
+}
+
+.box, .box-default {
+	border-radius: 20px;
+	border: 5px solid rgba(26, 188, 156,1.0);
+	width: 310px;
+	overflow: hidden;
+	margin: 0 auto;
 
 }
 
-.panel {
-		border-radius: 20px;
-		border: 5px solid rgba(26, 188, 156,1.0);
+.box_goal {
+	width: 200px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+
 }
+
+.box_update {
+	width: 80px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+
+.box-heading {
+	border-radius: 14px 14px 0 0 ;
+}
+
+.masonry-brick {
+  margin: 10px;
+}
+
+
 
 .navbar {
-	height:60px; left:0; position:fixed; width:100%; top:0;
+	height:60px; 
+	left:0; 
+	top:0;
+	position:fixed; 
+	width:100%; 
 	z-index: 9999;
 	background-color: rgba(200, 200, 200, 0.9);
 }

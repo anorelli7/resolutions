@@ -16,5 +16,6 @@
 //= require bootstrap-select
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require masonry/jquery.masonry
 //= require turbolinks
 //= require_tree .
