@@ -44,7 +44,7 @@ h2.jumbotron {
 .box, .box-default {
 	border-radius: 20px;
 	border: 5px solid rgba(26, 188, 156,1.0);
-	width: 310px;
+	width: 300px;
 	overflow: hidden;
 	margin: 0 auto;
 
@@ -62,7 +62,6 @@ h2.jumbotron {
 	width: 80px;
 	display: block;
 	float: left;
-	margin-left: 10px;
 }
 
 .box-heading {
@@ -70,7 +69,8 @@ h2.jumbotron {
 }
 
 .masonry-brick {
-  margin: 10px;
+	margin-bottom: 10px;
+
 }
 
 
