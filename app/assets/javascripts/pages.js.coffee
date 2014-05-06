@@ -8,4 +8,5 @@ $ ->
 	$('#goals_index').masonry ->
 		itemSelector: '.box'
 		isFitWidth: true
+		columnWidth: 320
 
